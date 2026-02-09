@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5e8dc;
+  font-family: 'Georgia', serif;
+  overflow: hidden;
+}
+
+/* Mensaje animado */
+.floating-message {
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  color: #5c4033;
+  animation: fade 4s infinite;
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Contenedor principal */
+.container {
+  background: #f8efe6;
+  border-radius: 25px;
+  padding: 40px;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 100px auto;
+  z-index: 2;
+  position: relative;
+}
+
+.text {
+  max-width: 420px;
+}
+
+h2, p {
+  color: #5c4033;
+}
+
+.counter {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Corazón grande */
+.heart {
+  width: 260px;
+  height: 260px;
+  position: relative;
+  transform: rotate(-45deg);
+  background: linear-gradient(45deg, #ff6f91, #ffc75f, #f9a1bc);
+  border-radius: 20px;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 260px;
+  height: 260px;
+  background: inherit;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -130px;
+}
+
+.heart::after {
+  left: 130px;
+}
+
+/* Corazones flotando */
+.hearts span {
+  position: absolute;
+  bottom: -10px;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-800px);
+    opacity: 0;
+  }
+}
